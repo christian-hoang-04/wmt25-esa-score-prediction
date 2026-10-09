@@ -1,0 +1,4 @@
+group,n_translations,mean_human_disagreement,mean_context_error_vs_b
+all_translations,100,22.5,20.78
+top_10_context_errors_vs_b,10,32.5,61.4
+b_score_80_plus_with_b_major_error,22,23.227272727272727,21.045454545454547

@@ -1,0 +1,16 @@
+[project]
+name = "wmt25-esa-score-experiment"
+version = "0.1.0"
+description = "CPU experiments for WMT25 ESA translation score prediction"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "numpy>=1.26,<2.5",
+    "pandas>=2.1",
+    "scikit-learn>=1.4",
+    "scipy>=1.11",
+    "matplotlib>=3.9",
+    "catboost>=1.2",
+]
+
+[tool.uv]
+package = false

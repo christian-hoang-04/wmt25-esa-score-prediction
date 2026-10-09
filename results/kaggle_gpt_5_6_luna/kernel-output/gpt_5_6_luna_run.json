@@ -1,0 +1,10 @@
+{
+  "model": "gpt-5.6-luna",
+  "sample_sha256": "c10f77eb89f19955b07ad87e529aaeef00f8d85ff35806ccc3c1b1a9c1f375d2",
+  "requested_prompts": 200,
+  "completed_prompts": 200,
+  "failed_prompts": 0,
+  "stop_reason": "completed_all_prompts",
+  "reported_total_cost_nanodollars": 75141000,
+  "output_csv": "/kaggle/working/gpt_5_6_luna_predictions.csv"
+}

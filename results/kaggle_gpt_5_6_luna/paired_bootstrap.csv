@@ -1,0 +1,10 @@
+target,candidate,baseline,candidate_minus_baseline_mae,document_bootstrap_ci_low,document_bootstrap_ci_high,n_translations,n_documents
+independent_annotator_b,Luna_feature_only,catboost_cross_F3,0.8389742832919858,-2.362466054061905,3.611928366663586,100,29
+independent_annotator_b,Luna_context_aware,catboost_cross_F3,0.6889742832919872,-2.912434868512093,5.9628589558470715,100,29
+independent_annotator_b,Luna_context_aware,Luna_feature_only,-0.14999999999999858,-4.9775,5.726683029453004,100,29
+input_annotator_a,Luna_feature_only,catboost_cross_F3,-2.034815951573556,-4.805655588120367,0.21838290224645396,100,29
+input_annotator_a,Luna_context_aware,catboost_cross_F3,1.7551840484264432,-0.7538319214555073,4.811058244756636,100,29
+input_annotator_a,Luna_context_aware,Luna_feature_only,3.789999999999999,0.4880550193050193,7.986052389705878,100,29
+mean_of_a_and_b,Luna_feature_only,catboost_cross_F3,1.9408092127342673,-0.5026136939516337,4.454705578097941,100,29
+mean_of_a_and_b,Luna_context_aware,catboost_cross_F3,1.9308092127342675,-0.42303923864796356,5.813771198683111,100,29
+mean_of_a_and_b,Luna_context_aware,Luna_feature_only,-0.009999999999999787,-3.5777671755725193,4.6182336018411965,100,29

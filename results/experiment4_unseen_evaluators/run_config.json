@@ -1,0 +1,44 @@
+{
+  "seed": 20261009,
+  "annotator_folds": 5,
+  "document_folds": 5,
+  "catboost": {
+    "iterations": 500,
+    "depth": 4,
+    "learning_rate": 0.03,
+    "l2_leaf_reg": 3,
+    "early_stopping_rounds": 60,
+    "loss_function": "RMSE",
+    "thread_count": 4
+  },
+  "ridge_alphas": [
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "features": [
+    "n_minor",
+    "n_major",
+    "n_total",
+    "target_char_length",
+    "source_char_length",
+    "target_word_length",
+    "source_word_length",
+    "minor_coverage",
+    "major_coverage",
+    "total_error_coverage",
+    "max_error_span_length",
+    "mean_error_span_length",
+    "error_density",
+    "major_fraction",
+    "has_major_error",
+    "has_zero_errors"
+  ],
+  "excluded_unidentified_annotator_rows": 48,
+  "input_annotations_before_unidentified_exclusion": 99846,
+  "input_annotations_evaluated": 99798,
+  "training_and_validation_weights": "equal total weight per evaluator within each split",
+  "test_design": "held-out evaluator group AND held-out exact-source document group",
+  "train_eval_fits": 305
+}

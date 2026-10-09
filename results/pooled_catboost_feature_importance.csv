@@ -1,0 +1,17 @@
+feature,importance,feature_set,training_scope
+total_error_coverage,62.379922052239394,F3,pooled_train_split
+major_coverage,6.225229898614901,F3,pooled_train_split
+minor_coverage,4.781283886522416,F3,pooled_train_split
+error_density,4.7053657657014964,F3,pooled_train_split
+n_total,4.291914249570539,F3,pooled_train_split
+n_major,3.5703323477671605,F3,pooled_train_split
+max_error_span_length,2.8796613785422664,F3,pooled_train_split
+major_fraction,2.395929184833891,F3,pooled_train_split
+n_minor,2.060265287435493,F3,pooled_train_split
+has_major_error,1.9656231467747645,F3,pooled_train_split
+target_word_length,1.4321945466610888,F3,pooled_train_split
+mean_error_span_length,1.2733780079022188,F3,pooled_train_split
+source_word_length,0.856476812931771,F3,pooled_train_split
+source_char_length,0.5682687879861117,F3,pooled_train_split
+target_char_length,0.5682318272483721,F3,pooled_train_split
+has_zero_errors,0.045922819268116165,F3,pooled_train_split

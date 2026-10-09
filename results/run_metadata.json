@@ -1,0 +1,71 @@
+{
+  "seed": 42,
+  "feature_sets": {
+    "F1": [
+      "n_minor",
+      "n_major"
+    ],
+    "F2": [
+      "n_minor",
+      "n_major",
+      "minor_coverage",
+      "major_coverage",
+      "total_error_coverage"
+    ],
+    "F3": [
+      "n_minor",
+      "n_major",
+      "n_total",
+      "target_char_length",
+      "source_char_length",
+      "target_word_length",
+      "source_word_length",
+      "minor_coverage",
+      "major_coverage",
+      "total_error_coverage",
+      "max_error_span_length",
+      "mean_error_span_length",
+      "error_density",
+      "major_fraction",
+      "has_major_error",
+      "has_zero_errors"
+    ]
+  },
+  "ridge_alphas": [
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "catboost_grid": [
+    {
+      "depth": 3,
+      "l2_leaf_reg": 3.0
+    },
+    {
+      "depth": 4,
+      "l2_leaf_reg": 3.0
+    },
+    {
+      "depth": 4,
+      "l2_leaf_reg": 8.0
+    }
+  ],
+  "catboost_iterations": 500,
+  "catboost_early_stopping_rounds": 50,
+  "primary_language_pair": "en-bho_IN",
+  "primary_cv_document_threshold": 60,
+  "primary_unique_documents": 50,
+  "primary_unique_leakage_groups": 50,
+  "primary_split_strategy": "5-fold GroupKFold out-of-fold evaluation",
+  "pooled_unique_documents": 884,
+  "pooled_unique_leakage_groups": 254,
+  "pooled_split_rows": {
+    "train": 70465,
+    "validation": 14974,
+    "test": 14407
+  },
+  "source_text_grouping": "Documents sharing any exact source_text were unioned before splitting."
+}

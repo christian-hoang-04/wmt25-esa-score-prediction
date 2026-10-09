@@ -1,0 +1,7 @@
+scope,comparison,n_bootstrap,ci_low,ci_high
+ALL_ESA,catboost_f3_minus_mean_mae,1000,-9.079856461509848,-7.206895320240247
+ALL_ESA,catboost_f3_minus_fixed_penalty_mae,1000,-19.011642047747543,-13.10359459205454
+ALL_ESA,catboost_f3_minus_ridge_f3_mae,1000,0.5535058370097597,0.967748208463673
+en-bho_IN,catboost_f3_minus_mean_mae,1000,-9.42194496425474,-7.020381770704744
+en-bho_IN,catboost_f3_minus_fixed_penalty_mae,1000,-4.273021264724941,-2.146506650856133
+en-bho_IN,catboost_f3_minus_ridge_f3_mae,1000,1.823495612779151,2.5680932125442553

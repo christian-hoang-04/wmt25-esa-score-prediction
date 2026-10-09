@@ -1,0 +1,4 @@
+translation_id,condition,model,provider,status,error_category,http_status,latency_seconds,prompt_tokens,completion_tokens,total_tokens,actual_cost_usd,sample_sha256,synthetic_schema_valid,retry_after_seconds
+,synthetic_preflight,gemini-3.8-flash,gemini,invalid_synthetic_response,invalid_json_score,,5.047,25.0,0.0,38.0,1.875e-05,c10f77eb89f19955b07ad87e529aaeef00f8d85ff35806ccc3c1b1a9c1f375d2,,
+,synthetic_preflight,gemini-3.8-flash,gemini,request_error,HTTPStatusError,,2.204,,,,0.0,c10f77eb89f19955b07ad87e529aaeef00f8d85ff35806ccc3c1b1a9c1f375d2,False,
+,synthetic_preflight,gemini-3.8-flash,gemini,request_error,rate_or_quota_limit,429.0,1.89,,,,0.0,c10f77eb89f19955b07ad87e529aaeef00f8d85ff35806ccc3c1b1a9c1f375d2,False,

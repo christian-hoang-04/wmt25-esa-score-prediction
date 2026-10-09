@@ -1,0 +1,3 @@
+metric,candidate_minus_baseline,document_bootstrap_ci_low,document_bootstrap_ci_high,replicates,documents
+weighted_mae,-0.010804577508408866,-0.021410808325715135,-4.554128401463201e-06,2000,149
+weighted_rmse,0.004901412550818051,-0.006323891281531502,0.016764165029933754,2000,149

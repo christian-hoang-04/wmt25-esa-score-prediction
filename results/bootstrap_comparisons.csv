@@ -1,0 +1,9 @@
+experiment_scope,comparison,mae_difference,ci_low,ci_high,bootstrap_replicates,n_documents,interpretation
+en_bho_cv,catboost_F3 MAE minus fixed_penalty_F1 MAE,-11.91931089022856,-12.822712764045951,-10.926803830262092,1000,50,negative favors the first model; positive favors the second
+en_bho_cv,catboost_F3 MAE minus ridge_F3 MAE,-1.519295522429024,-1.7858464831633114,-1.144779267938513,1000,50,negative favors the first model; positive favors the second
+en_bho_cv,catboost_F3 MAE minus catboost_F1 MAE,-9.414136834131549,-10.420278124042417,-8.031142964320663,1000,50,negative favors the first model; positive favors the second
+en_bho_cv,ridge_F3 MAE minus ridge_F1 MAE,-12.42002402866322,-13.423194111791794,-11.252641089172004,1000,50,negative favors the first model; positive favors the second
+pooled_holdout,catboost_F3 MAE minus fixed_penalty_F1 MAE,-19.212250493567982,-25.46132823378563,-13.279857572610307,1000,159,negative favors the first model; positive favors the second
+pooled_holdout,catboost_F3 MAE minus ridge_F3 MAE,-0.5390571312334558,-0.9846209273358311,-0.17053252905651017,1000,159,negative favors the first model; positive favors the second
+pooled_holdout,catboost_F3 MAE minus catboost_F1 MAE,-7.9857497784020985,-10.96983310981618,-5.412108279250144,1000,159,negative favors the first model; positive favors the second
+pooled_holdout,ridge_F3 MAE minus ridge_F1 MAE,-14.226718519098828,-18.65655147201252,-10.143887317241228,1000,159,negative favors the first model; positive favors the second

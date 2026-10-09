@@ -1,0 +1,6 @@
+numpy>=1.26,<2.5
+pandas>=2.1
+scikit-learn>=1.4
+scipy>=1.11
+matplotlib>=3.9
+catboost>=1.2

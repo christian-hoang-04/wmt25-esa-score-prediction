@@ -1,0 +1,66 @@
+[{"stream_name":"stdout","time":1.198994665,"data":"\n"}
+,{"stream_name":"stdout","time":1.202570766,"data":"$ /usr/bin/python3 /kaggle/temp/wmt25-esa-source/download_data.py --output /kaggle/temp/wmt25-genmt-humeval.jsonl\n"}
+,{"stream_name":"stdout","time":2.244907972,"data":"Downloading https://github.com/wmt-conference/wmt25-general-mt/raw/refs/heads/main/data/wmt25-genmt-humeval.jsonl (128674273 bytes)\n"}
+,{"stream_name":"stdout","time":4.657105019,"data":"Dataset ready: /kaggle/temp/wmt25-genmt-humeval.jsonl (128674273 bytes)\n"}
+,{"stream_name":"stdout","time":4.679927078,"data":"\n"}
+,{"stream_name":"stdout","time":4.6799874169999995,"data":"$ /usr/bin/python3 /kaggle/temp/wmt25-esa-source/prepare_data.py --input /kaggle/temp/wmt25-genmt-humeval.jsonl --output-dir /kaggle/working/wmt25-esa-score-experiment/data/processed --results-dir /kaggle/working/wmt25-esa-score-experiment/results\n"}
+,{"stream_name":"stdout","time":25.802467837000002,"data":"Retained 99,846 annotation examples across 14 ESA directions\n"}
+,{"stream_name":"stdout","time":25.802514871,"data":"Excluded 8,992 annotations with invalid/missing fields or spans\n"}
+,{"stream_name":"stdout","time":25.802530793,"data":"Prepared data: /kaggle/working/wmt25-esa-score-experiment/data/processed/annotations.csv.gz\n"}
+,{"stream_name":"stdout","time":25.802534964,"data":"Dataset summary: /kaggle/working/wmt25-esa-score-experiment/results/dataset_summary.json\n"}
+,{"stream_name":"stdout","time":25.820924767,"data":"\n"}
+,{"stream_name":"stdout","time":25.820966418,"data":"$ /usr/bin/python3 /kaggle/temp/wmt25-esa-source/train.py --data /kaggle/working/wmt25-esa-score-experiment/data/processed/annotations.csv.gz --results-dir /kaggle/working/wmt25-esa-score-experiment/results --models-dir /kaggle/working/wmt25-esa-score-experiment/models\n"}
+,{"stream_name":"stdout","time":46.275301723,"data":"Bhojpuri fold 1/5: train=5,125, test=1,573, tune=4,445, validation=680\n"}
+,{"stream_name":"stdout","time":52.796064946,"data":"Bhojpuri fold 2/5: train=5,427, test=1,271, tune=5,032, validation=395\n"}
+,{"stream_name":"stdout","time":56.710986909,"data":"Bhojpuri fold 3/5: train=5,425, test=1,273, tune=3,238, validation=2,187\n"}
+,{"stream_name":"stdout","time":62.058923211,"data":"Bhojpuri fold 4/5: train=5,404, test=1,294, tune=4,044, validation=1,360\n"}
+,{"stream_name":"stdout","time":67.493058828,"data":"Bhojpuri fold 5/5: train=5,411, test=1,287, tune=4,739, validation=672\n"}
+,{"stream_name":"stdout","time":94.575933864,"data":"pooled_holdout: train=70,465, validation=14,974, test=14,407; test rows by pair={'cs-de_DE': 1004, 'cs-uk_UA': 966, 'en-ar_EG': 1275, 'en-bho_IN': 924, 'en-cs_CZ': 1669, 'en-et_EE': 1059, 'en-is_IS': 1000, 'en-it_IT': 858, 'en-ja_JP': 927, 'en-mas_KE': 1167, 'en-ru_RU': 997, 'en-sr_Cyrl_RS': 929, 'en-uk_UA': 968, 'en-zh_CN': 664}\n"}
+,{"stream_name":"stdout","time":101.071780022,"data":"Predictions: /kaggle/working/wmt25-esa-score-experiment/results/predictions.csv.gz\n"}
+,{"stream_name":"stdout","time":101.071824796,"data":"Split manifest: /kaggle/working/wmt25-esa-score-experiment/results/split_manifest.csv\n"}
+,{"stream_name":"stdout","time":101.738954292,"data":"\n"}
+,{"stream_name":"stdout","time":101.738995398,"data":"$ /usr/bin/python3 /kaggle/temp/wmt25-esa-source/evaluate.py --data /kaggle/working/wmt25-esa-score-experiment/data/processed/annotations.csv.gz --predictions /kaggle/working/wmt25-esa-score-experiment/results/predictions.csv.gz --results-dir /kaggle/working/wmt25-esa-score-experiment/results --models-dir /kaggle/working/wmt25-esa-score-experiment/models\n"}
+,{"stream_name":"stderr","time":110.475971613,"data":"/kaggle/temp/wmt25-esa-source/evaluate.py:31: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.\n"}
+,{"stream_name":"stderr","time":110.476556804,"data":"  result = function(actual, predicted)\n"}
+,{"stream_name":"stderr","time":110.517769905,"data":"/kaggle/temp/wmt25-esa-source/evaluate.py:31: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.\n"}
+,{"stream_name":"stderr","time":110.517807773,"data":"  result = function(actual, predicted)\n"}
+,{"stream_name":"stderr","time":110.544453331,"data":"/kaggle/temp/wmt25-esa-source/evaluate.py:31: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.\n"}
+,{"stream_name":"stderr","time":110.544490838,"data":"  result = function(actual, predicted)\n"}
+,{"stream_name":"stderr","time":110.579974432,"data":"/kaggle/temp/wmt25-esa-source/evaluate.py:31: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.\n"}
+,{"stream_name":"stderr","time":110.5800314,"data":"  result = function(actual, predicted)\n"}
+,{"stream_name":"stderr","time":110.610128386,"data":"/kaggle/temp/wmt25-esa-source/evaluate.py:31: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.\n"}
+,{"stream_name":"stderr","time":110.610170955,"data":"  result = function(actual, predicted)\n"}
+,{"stream_name":"stderr","time":110.643972095,"data":"/kaggle/temp/wmt25-esa-source/evaluate.py:31: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.\n"}
+,{"stream_name":"stderr","time":110.644046732,"data":"  result = function(actual, predicted)\n"}
+,{"stream_name":"stderr","time":110.66878398,"data":"/kaggle/temp/wmt25-esa-source/evaluate.py:31: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.\n"}
+,{"stream_name":"stderr","time":110.668850811,"data":"  result = function(actual, predicted)\n"}
+,{"stream_name":"stderr","time":110.690909526,"data":"/kaggle/temp/wmt25-esa-source/evaluate.py:31: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.\n"}
+,{"stream_name":"stderr","time":110.690947453,"data":"  result = function(actual, predicted)\n"}
+,{"stream_name":"stderr","time":110.711020909,"data":"/kaggle/temp/wmt25-esa-source/evaluate.py:31: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.\n"}
+,{"stream_name":"stderr","time":110.71108042,"data":"  result = function(actual, predicted)\n"}
+,{"stream_name":"stderr","time":110.732501832,"data":"/kaggle/temp/wmt25-esa-source/evaluate.py:31: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.\n"}
+,{"stream_name":"stderr","time":110.732541297,"data":"  result = function(actual, predicted)\n"}
+,{"stream_name":"stderr","time":110.755957068,"data":"/kaggle/temp/wmt25-esa-source/evaluate.py:31: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.\n"}
+,{"stream_name":"stderr","time":110.75602581,"data":"  result = function(actual, predicted)\n"}
+,{"stream_name":"stderr","time":110.778020502,"data":"/kaggle/temp/wmt25-esa-source/evaluate.py:31: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.\n"}
+,{"stream_name":"stderr","time":110.778085567,"data":"  result = function(actual, predicted)\n"}
+,{"stream_name":"stderr","time":110.798933797,"data":"/kaggle/temp/wmt25-esa-source/evaluate.py:31: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.\n"}
+,{"stream_name":"stderr","time":110.798975977,"data":"  result = function(actual, predicted)\n"}
+,{"stream_name":"stderr","time":110.821274009,"data":"/kaggle/temp/wmt25-esa-source/evaluate.py:31: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.\n"}
+,{"stream_name":"stderr","time":110.821354594,"data":"  result = function(actual, predicted)\n"}
+,{"stream_name":"stderr","time":110.840165405,"data":"/kaggle/temp/wmt25-esa-source/evaluate.py:31: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.\n"}
+,{"stream_name":"stderr","time":110.840207407,"data":"  result = function(actual, predicted)\n"}
+,{"stream_name":"stderr","time":123.975411446,"data":"/kaggle/temp/wmt25-esa-source/evaluate.py:329: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.\n"}
+,{"stream_name":"stderr","time":123.975474228,"data":"  ax.boxplot(values, labels=labels, showfliers=False, patch_artist=True,\n"}
+,{"stream_name":"stdout","time":124.61690324,"data":"Metrics: /kaggle/working/wmt25-esa-score-experiment/results/metrics.csv\n"}
+,{"stream_name":"stdout","time":124.617024481,"data":"Ablations: /kaggle/working/wmt25-esa-score-experiment/results/ablations.csv\n"}
+,{"stream_name":"stdout","time":124.617037521,"data":"Report: /kaggle/working/wmt25-esa-score-experiment/results/report.md\n"}
+,{"stream_name":"stdout","time":125.008292966,"data":"\n"}
+,{"stream_name":"stdout","time":125.00832891,"data":"Experiment complete. Outputs are under /kaggle/working/wmt25-esa-score-experiment.\n"}
+,{"stream_name":"stderr","time":127.817376562,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":127.817424745,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":128.242111126,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":128.242155128,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":130.554092042,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":131.233412952,"data":"[NbConvertApp] Writing 313898 bytes to __results__.html\n"}
+]

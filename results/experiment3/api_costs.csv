@@ -1,0 +1,4 @@
+condition,provider,model,status,error_category,http_status,latency_seconds,prompt_tokens,completion_tokens,total_tokens,actual_cost_usd,retry_after_seconds
+synthetic_preflight,gemini,gemini-3.8-flash,invalid_synthetic_response,invalid_json_score,,5.047,25.0,0.0,38.0,1.875e-05,
+synthetic_preflight,gemini,gemini-3.8-flash,request_error,HTTPStatusError,,2.204,,,,0.0,
+synthetic_preflight,gemini,gemini-3.8-flash,request_error,rate_or_quota_limit,429.0,1.89,,,,0.0,

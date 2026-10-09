@@ -1,0 +1,27 @@
+{
+  "fold_1": {
+    "train_docs": 49,
+    "test_docs": 1
+  },
+  "fold_2": {
+    "train_docs": 40,
+    "test_docs": 10
+  },
+  "fold_3": {
+    "train_docs": 37,
+    "test_docs": 13
+  },
+  "fold_4": {
+    "train_docs": 38,
+    "test_docs": 12
+  },
+  "fold_5": {
+    "train_docs": 36,
+    "test_docs": 14
+  },
+  "pooled": {
+    "train": 560,
+    "validation": 119,
+    "test": 149
+  }
+}

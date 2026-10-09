@@ -1,0 +1,7 @@
+model,pairwise_accuracy_pct,comparable_pairs,pair_groups,target
+mean_cross,50.0,30,14,mean_of_a_and_b
+fixed_penalty,68.33333333333333,30,14,mean_of_a_and_b
+ridge_cross_F3,83.33333333333333,30,14,mean_of_a_and_b
+catboost_cross_F3,76.66666666666667,30,14,mean_of_a_and_b
+Luna_feature_only,78.33333333333333,30,14,mean_of_a_and_b
+Luna_context_aware,78.33333333333333,30,14,mean_of_a_and_b

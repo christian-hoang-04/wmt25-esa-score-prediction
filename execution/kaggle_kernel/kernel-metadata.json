@@ -1,0 +1,16 @@
+{
+  "id": "namlh2004/wmt25-esa-score-prediction-experiment",
+  "title": "WMT25 ESA Score Prediction Experiment",
+  "code_file": "main.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "machine_shape": "",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

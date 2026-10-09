@@ -1,0 +1,7 @@
+scope,comparison,observed_delta,n_bootstrap,ci_low,ci_high
+ALL_ESA,catboost_f3_minus_ridge_f3_macro_evaluator_mae,0.0389788825494416,5000,-0.1483334117633207,0.21437145839055738
+ALL_ESA,catboost_f3_minus_mean_macro_evaluator_mae,-6.276027168301182,5000,-6.954665627801035,-5.603035435352695
+ALL_ESA,catboost_f3_minus_fixed_penalty_macro_evaluator_mae,-8.754762193611374,5000,-10.009609547360036,-7.4936516290675135
+en-bho_IN,catboost_f3_minus_ridge_f3_macro_evaluator_mae,1.861169940025074,5000,1.305809315082728,2.863349037438749
+en-bho_IN,catboost_f3_minus_mean_macro_evaluator_mae,-11.136771627121792,5000,-18.26720573223054,-4.645230042742012
+en-bho_IN,catboost_f3_minus_fixed_penalty_macro_evaluator_mae,-3.8291142996478094,5000,-11.577555306431256,3.6875750138222756

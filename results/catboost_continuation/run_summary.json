@@ -1,0 +1,46 @@
+{
+  "experiment": "pooled_holdout_cross_catboost_F3_continuation",
+  "base_model": "models\\experiment2\\pooled_holdout_holdout_cross_catboost_F3.cbm",
+  "base_tree_count": 453,
+  "extra_iterations_requested": 1000,
+  "early_stopping_rounds": 100,
+  "candidate_tree_count": 513,
+  "candidate_best_iteration": 59,
+  "continued_model_selected_by_validation": true,
+  "selected_tree_count": 513,
+  "train_rows": 43498,
+  "validation_rows": 9412,
+  "test_rows": 8588,
+  "train_documents": 560,
+  "validation_documents": 119,
+  "test_documents": 149,
+  "base_validation": {
+    "weighted_mae": 16.839846530130973,
+    "weighted_rmse": 21.731554139684178,
+    "weighted_bias_pred_minus_human": 0.7799346521567455
+  },
+  "candidate_validation": {
+    "weighted_mae": 16.809762833079734,
+    "weighted_rmse": 21.718674393613203,
+    "weighted_bias_pred_minus_human": 0.8275001208385993
+  },
+  "original_validation_rmse_from_model_selection": 21.731554139684174,
+  "original_test_metrics": {
+    "mae": 18.12271791043012,
+    "rmse": 23.11065449034528
+  },
+  "fit_parameters": {
+    "allow_writing_files": false,
+    "eval_metric": "RMSE",
+    "verbose": 0,
+    "iterations": 1000,
+    "thread_count": 4,
+    "l2_leaf_reg": 3,
+    "loss_function": "RMSE",
+    "depth": 4,
+    "random_seed": 42,
+    "learning_rate": 0.03
+  },
+  "validation_selection_only": true,
+  "test_used_for_selection": false
+}

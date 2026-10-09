@@ -1,0 +1,17 @@
+feature,importance
+total_error_coverage,22.241667017315585
+major_coverage,15.992901074255904
+has_major_error,8.827275109667534
+max_error_span_length,6.995979387282229
+error_density,6.869976060320301
+n_total,6.352587929736095
+major_fraction,6.2236656415937
+n_major,5.4603883468703165
+mean_error_span_length,5.083638185565534
+minor_coverage,3.953978640699251
+n_minor,3.053872943096853
+source_word_length,1.903722678717497
+target_char_length,1.8956269835759205
+source_char_length,1.8753821934992898
+target_word_length,1.8711165375611618
+has_zero_errors,1.3982212702428276

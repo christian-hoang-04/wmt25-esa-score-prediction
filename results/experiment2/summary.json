@@ -1,0 +1,71 @@
+{
+  "source_data_rows": 99846,
+  "annotator_views": 66098,
+  "paired_translations": 33049,
+  "directed_pairs": 66098,
+  "pair_weight_sum_per_translation_min": 1.0,
+  "pair_weight_sum_per_translation_max": 1.0,
+  "split_audit": {
+    "fold_1": {
+      "train_docs": 49,
+      "test_docs": 1
+    },
+    "fold_2": {
+      "train_docs": 40,
+      "test_docs": 10
+    },
+    "fold_3": {
+      "train_docs": 37,
+      "test_docs": 13
+    },
+    "fold_4": {
+      "train_docs": 38,
+      "test_docs": 12
+    },
+    "fold_5": {
+      "train_docs": 36,
+      "test_docs": 14
+    },
+    "pooled": {
+      "train": 560,
+      "validation": 119,
+      "test": 149
+    }
+  },
+  "seed": 42,
+  "bootstrap_replicates": 1000,
+  "catboost_iterations_max": 500,
+  "catboost_early_stopping_rounds": 50,
+  "feature_sets": {
+    "F1": [
+      "n_minor",
+      "n_major"
+    ],
+    "F2": [
+      "n_minor",
+      "n_major",
+      "minor_coverage",
+      "major_coverage",
+      "total_error_coverage"
+    ],
+    "F3": [
+      "n_minor",
+      "n_major",
+      "n_total",
+      "target_char_length",
+      "source_char_length",
+      "target_word_length",
+      "source_word_length",
+      "minor_coverage",
+      "major_coverage",
+      "total_error_coverage",
+      "max_error_span_length",
+      "mean_error_span_length",
+      "error_density",
+      "major_fraction",
+      "has_major_error",
+      "has_zero_errors"
+    ]
+  },
+  "sample100_sha256": "c10f77eb89f19955b07ad87e529aaeef00f8d85ff35806ccc3c1b1a9c1f375d2"
+}

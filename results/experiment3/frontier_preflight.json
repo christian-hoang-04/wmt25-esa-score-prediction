@@ -1,0 +1,12 @@
+{
+  "provider": "gemini",
+  "model": "gemini-3.8-flash",
+  "status": "request_error",
+  "error_category": "rate_or_quota_limit",
+  "http_status": 429,
+  "latency_seconds": 1.89,
+  "sample_sha256": "c10f77eb89f19955b07ad87e529aaeef00f8d85ff35806ccc3c1b1a9c1f375d2",
+  "preflight_cost_usd": 0.0,
+  "synthetic_schema_valid": false,
+  "retry_after_seconds": null
+}
