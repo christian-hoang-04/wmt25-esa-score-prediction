@@ -55,3 +55,43 @@ Repository setup and publication:
 - `git diff --cached --check` reported pre-existing trailing whitespace in generated result CSVs (2,282 diagnostic lines). The artifact contents were left unchanged.
 - Two attempts to interpolate the GitHub no-reply address in one `gh api --jq` expression failed because of PowerShell quoting. Separate `.id` and `.login` queries resolved it; no project files were affected.
 - No blocking issues or follow-ups remain.
+
+## New request: repo-wide refactor (planning complete)
+
+- User clarified the scope as the entire repo and local code. No blocking questions remain.
+- Assumptions and success criteria are recorded in the active section of `implementation-plan.md`: centralize all authored Python in `wmt25_esa/`, retain old commands as compatibility entrypoints, keep data/models/results in place, refresh generated Kaggle code from its builder, and push to the existing public remote.
+- Read-only review commands run: `git status --short --branch`, `git remote -v`, `git log -3 --oneline`, `git ls-files '*.py'`, `rg --files`, and targeted `rg` searches for imports and command/path references.
+- Read `README.md`, `pyproject.toml`, `.gitignore`, both existing implementation notes, the Kaggle bundle builder, and core script sections. Inspected top-level Python definitions/imports with a read-only AST inventory.
+- Findings: 15 tracked Python files; no dedicated `tests/` directory. Largest core scripts are `experiment2.py` (1,084 lines), `evaluate.py` (891), `train.py` (666), and `evaluate_frontier.py` (621). Kaggle's `main.py` is generated from selected source scripts.
+- At planning review, no project source, data, model, report, or run-output file had yet been changed.
+
+### Implementation started
+
+- Chosen structure: canonical implementations under `wmt25_esa/`; keep the documented root and result-folder script paths as thin compatibility wrappers. Leave the Kaggle benchmark adapter at its platform-required path and rebuild the generated Kaggle entrypoint from the canonical source.
+- Preserve `data/`, `models/`, `results/`, `execution/run-output/`, and their contents/paths.
+- No tests, training, experiments, or API calls will be run.
+
+### Refactor progress
+
+- Moved the eight core pipeline/builder implementations into `wmt25_esa/` and four saved-result analysis implementations into `wmt25_esa/analysis/`.
+- Added package initializers and compatibility wrappers at the original root/result-script paths. Updated internal imports to package-relative imports.
+- Corrected analysis output directories after relocation so scripts still target their original `results/` folders.
+- Updated the Kaggle builder to include package files and create nested directories when materializing its source bundle. Rebuilt `execution/kaggle_kernel/main.py` through the builder; it is 33,908 bytes.
+- Added a README code-layout section. No data, models, reports, plots, or run outputs were regenerated or edited.
+- Static inspection parsed 28 Python files with `ast.parse`; all 10 declared Kaggle bundle inputs exist, and the generated bundle contains all required package files. No project tests/workloads were run.
+
+Commands run for this refactor so far:
+
+- `git mv` for the eight core scripts and four analysis scripts into `wmt25_esa/`.
+- Read-only `rg` searches for stale imports, path constants, and entrypoint references.
+- `python build_kaggle_kernel.py` (successful; generated the Kaggle package).
+- A Python AST and bundle-content inspection script (syntax and generated-source structure only; no project code executed).
+
+### Final local review before publication
+
+- Compared each relocated canonical source file against its prior `HEAD` version. The source changes are limited to package-relative imports, relocated result-output path constants, and the Kaggle builder's package-aware source/materialization logic.
+- Reviewed every compatibility wrapper and its target module. Existing root and result-folder command paths remain present.
+- Staged review covered 30 paths. `git diff --cached --name-only -- data models` returned no paths; result/run-output changes were Python entrypoint moves/wrappers only, with no non-code artifacts changed.
+- Static syntax inspection passed for 28 Python files. All 10 Kaggle bundle inputs exist, and the generated bundle contains the required package files.
+- No project tests, CLI workloads, experiments, training, or API calls were run.
+- Commit and push to the existing public `origin/main` remain to be performed after this final local review.

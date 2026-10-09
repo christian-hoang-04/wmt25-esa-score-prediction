@@ -1,48 +1,59 @@
-# Implementation plan: publish this project
+# Implementation plan
 
-## Understanding
+## Active request: repo-wide refactor
 
-Create a public GitHub repository under the confirmed `christian-hoang-04` account and push this machine translation project, including its tested experiment artifacts. The working folder is `D:\projects\iit\machine_translation`; it had no Git repository or remote at the start.
+### Understanding
 
-The project includes Python source and documentation, `pyproject.toml` and `uv.lock`, input and prepared data, fitted models, experiment results, and Kaggle packages and run outputs. `.gitignore` excludes `.venv`, Python bytecode caches, and the raw and processed data folders. The local `.venv` is about 664 MiB and stays local. Two project files exceed GitHub's normal 100 MB per-file limit: `results/experiment2/paired_annotations.csv` (about 161 MiB) and `data/raw/wmt25-genmt-humeval.jsonl` (about 123 MiB); Git LFS is installed.
+Refactor the entire project codebase and local checkout into a clearer structure while preserving its behavior and existing ways to run the project. The repository is public on GitHub, and the user clarified that the request covers the entire repo and local code.
 
-## Success criteria
+### Review findings
 
-- A public GitHub repository exists under `christian-hoang-04` and contains the project deliverables.
-- `.venv`, Python bytecode/cache directories, and the transient provider lock marker are excluded.
-- The two oversized files use Git LFS and their LFS objects are uploaded.
-- `main` tracks the remote branch, and the local checkout is clean.
-- The planning and execution notes are present in the working folder and pushed.
+- The checkout is on `main`, tracking `origin/main`; it was clean before the current planning-note updates.
+- The project has 15 tracked Python files spanning core experiment scripts, results-specific analysis scripts, a Kaggle benchmark adapter, and a generated Kaggle entrypoint.
+- Root scripts contain substantial mixed orchestration/analysis logic (`experiment2.py` 1,084 lines, `evaluate.py` 891, `train.py` 666, `evaluate_frontier.py` 621).
+- `build_kaggle_kernel.py` embeds selected source files into `execution/kaggle_kernel/main.py`; the generated bundle must be rebuilt from its generator.
+- Existing CLI paths are documented in README and experiment reports. Other modules import `prepare_data`, `train`, and `run_frontier_judge` by their current root names.
+- There is no dedicated `tests/` directory. Data, saved models, reports, plots, and run outputs are project deliverables.
 
-## Assumptions and decisions
+### Success criteria
 
-- Repository name chosen from the project purpose: `wmt25-esa-score-prediction`; the authenticated-account lookup found no existing repository with that name.
-- The user explicitly requested public visibility and confirmed the `christian-hoang-04` account.
-- “Everything tested” includes source, docs, data, models, results, plots, reports, and Kaggle execution outputs/logs.
-- Exclude only the local `.venv`, bytecode/cache directories, and the transient 1-byte `results/experiment3/.provider-ledger.json.lock` marker. Keep `uv.lock` and all other project data and outputs.
-- Use Git LFS for the two oversized files. Use the account's GitHub no-reply email for this public commit rather than the machine's global personal email.
-- Do not edit existing project source or experiment outputs, and do not run project tests or experiments.
+- All general experiment and saved-result analysis code has a clear canonical package location; platform-specific Kaggle entrypoints stay self-contained at their required paths.
+- Existing documented commands and module imports remain supported.
+- Kaggle bundle generation points at the canonical code and the checked-in generated entrypoint is refreshed from the builder.
+- Data, model, result, plot, report, and run-output files remain byte-for-byte unchanged and in their current paths.
+- The local refactor is pushed to the existing public `origin` after reviewing the complete diff.
+- `implementation-process.md` records the work and actual verification; no project tests are added or run under this request.
 
-## Blocking questions
+### Assumptions
 
-None. The account, public visibility, and naming discretion are explicit.
+- “Entire repo” means all hand-authored project code and its entrypoints, including local analysis scripts; frozen data and experiment outputs stay in place because their paths are part of the current project interface.
+- Preserve root-level commands and paths as compatibility wrappers even after moving canonical implementations into a package.
+- Preserve results and models exactly; do not rerun experiments or regenerate scientific outputs.
+- The earlier instruction to publish project contents to the public GitHub repository applies to this repo-wide refactor, so push the completed local changes to `origin/main`.
+- No tests or experiments are run unless explicitly requested. Verification will use source/entrypoint review and diff/integrity checks that do not execute project workloads.
 
-## Intended files and commands
+### Blocking questions
 
-Changes are limited to Git metadata, these requested planning/execution notes, and `.gitattributes` for LFS. Existing source and experiment outputs remain unchanged.
+None. The user explicitly requested the whole repo and local code. The assumptions above define a conservative compatibility-preserving scope.
 
-1. Initialize Git on `main`, configure LFS and repository-local commit identity.
-2. Stage project files, explicitly force-adding the ignored `data/raw` and `data/processed` deliverables. Exclude `.venv`, caches, and the transient provider lock marker.
-3. Review staged names/sizes, credential patterns, exclusions, and LFS attributes.
-4. Commit, create a public GitHub repository, push `main` and LFS objects, then verify the remote and working tree.
+### Intended files and commands
 
-## Verification approach
+- Create a canonical `wmt25_esa/` Python package containing core scripts and analysis modules. Keep the self-contained Kaggle benchmark adapter and generated Kaggle entrypoint at their required paths.
+- Replace existing root script paths with small compatibility entrypoints that delegate to the package; keep Kaggle's required execution path as an adapter.
+- Update internal imports, `build_kaggle_kernel.py`, package source selection/materialization, and the README/report command references only where needed. Regenerate `execution/kaggle_kernel/main.py` from the builder; do not hand-edit its embedded payload.
+- Keep all data/results/models folders and generated experiment outputs unchanged.
+- Use Git moves for code relocation, inspect references, and review `git diff --stat`, staged paths, LFS state, and final Git status before pushing.
 
-- Review staged paths and counts, confirm data is present and environment/cache paths are absent, and confirm LFS filters are set.
-- Run a credential-oriented pattern scan before public upload.
-- Verify repository visibility, remote URL and branch commit, LFS object integrity, and clean local status.
-- No project tests or experiment runs are needed because project code is unchanged.
+### Verification approach
 
-## Planning status
+- Compare tracked changes against the approved scope; confirm artifact paths/content are unchanged.
+- Review compatibility wrappers, package-relative imports, every documented command, and Kaggle builder inputs/materialization paths.
+- Review generated Kaggle output against the generator's canonical inputs.
+- Do not run model training, API calls, experiment scripts, or a test suite.
+- Confirm local and remote branches agree after push.
 
-Implementation complete. Execution details and verification results are in `implementation-process.md`.
+## Previous completed request: initial GitHub publication
+
+- Created public `christian-hoang-04/wmt25-esa-score-prediction` and pushed the initial project.
+- Uploaded the two oversized files with Git LFS; the working branch was verified clean and tracking `origin/main`.
+- Detailed publication notes remain in `implementation-process.md`.

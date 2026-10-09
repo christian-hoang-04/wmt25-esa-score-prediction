@@ -27,6 +27,10 @@ uv sync --python 3.12
 uv run python experiment2.py
 ```
 
+## Code layout
+
+The `wmt25_esa/` package contains the canonical implementation for data preparation, training, evaluation, frontier judging, and saved-result analysis. The existing root commands and result-folder analysis commands remain as compatibility entrypoints, so saved reports and documented workflows keep their paths. The Kaggle benchmark adapter and generated upload package stay under `execution/` because Kaggle expects those locations.
+
 `experiment2.py` reuses `results/split_manifest.csv` from Experiment 1. It writes a directed A→B/B→A paired set, keeps the five Bhojpuri folds and pooled 70/15/15 assignments document-grouped, and fits matched same-annotator and cross-trained Ridge/CatBoost models with F1/F2/F3 ablations. If fitting has already completed and only plots/reports/sample outputs need regeneration, use `uv run python experiment2.py --postprocess-only`.
 
 ### Frontier judge (optional API run)
@@ -57,7 +61,7 @@ The downloader validates that the file is real JSONL rather than an HTML respons
 
 ## Run on Kaggle
 
-The `execution/kaggle_kernel/` folder is the Kaggle upload package. Kaggle's script runner executes only the designated code file, so `build_kaggle_kernel.py` embeds the canonical root scripts into one self-contained entrypoint. It downloads the public JSONL from within a private CPU Kaggle kernel with internet enabled, runs preparation, training, and evaluation, and writes inspectable artifacts under `/kaggle/working`.
+The `execution/kaggle_kernel/` folder is the Kaggle upload package. Kaggle's script runner executes only the designated code file, so `build_kaggle_kernel.py` embeds the canonical package modules and compatibility entrypoints into one self-contained entrypoint. It downloads the public JSONL from within a private CPU Kaggle kernel with internet enabled, runs preparation, training, and evaluation, and writes inspectable artifacts under `/kaggle/working`.
 
 From this repository, use the shared orchestration scripts:
 
