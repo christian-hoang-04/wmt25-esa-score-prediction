@@ -57,3 +57,10 @@ None. The user explicitly requested the whole repo and local code. The assumptio
 - Created public `christian-hoang-04/wmt25-esa-score-prediction` and pushed the initial project.
 - Uploaded the two oversized files with Git LFS; the working branch was verified clean and tracking `origin/main`.
 - Detailed publication notes remain in `implementation-process.md`.
+
+## Refactor result
+
+- Implemented the repo-wide source organization refactor and pushed it to the existing public repository.
+- The compatibility entrypoints and generated Kaggle package are included; data, saved models, reports, plots, and run outputs stayed in place and unchanged.
+- Static syntax and bundle-structure review passed. No project tests or experiments were run.
+- Refactor commit: `f531e831a63a0ed6633faa47f1dd39aa6662c7ee`.

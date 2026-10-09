@@ -95,3 +95,12 @@ Commands run for this refactor so far:
 - Static syntax inspection passed for 28 Python files. All 10 Kaggle bundle inputs exist, and the generated bundle contains the required package files.
 - No project tests, CLI workloads, experiments, training, or API calls were run.
 - Commit and push to the existing public `origin/main` remain to be performed after this final local review.
+
+### Publication and final status
+
+- `git commit -m "Refactor project source into package structure"` created commit `f531e831a63a0ed6633faa47f1dd39aa6662c7ee`.
+- `git push origin main` succeeded; GitHub advanced `main` from `7ee9295` to `f531e83`.
+- `git ls-remote origin refs/heads/main` matched local `HEAD` at `f531e831a63a0ed6633faa47f1dd39aa6662c7ee`.
+- Final `git status --short --branch` showed `main...origin/main` with no changes.
+- No LFS data changed, and the staged review found no changes under `data/` or `models/`, and no non-code changes under `results/` or `execution/run-output/`.
+- The refactor and generated Kaggle source were pushed. No tests or project workloads were run.
